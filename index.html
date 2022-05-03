@@ -14,10 +14,13 @@
     <script src="https://kit.fontawesome.com/48826b6b84.js" crossorigin="anonymous"></script>
 </head>
 <body>
+<div class="day-n-night" type="button" onclick="change_mode();">
+    <i class="bi bi-moon-stars-fill" id="change-mode"></i>
+</div>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
     <div class="container-fluid">
-        <div class="logo nav-item">
-            <a class="nav-link " href="#"><h3>QKart</h3></a>
+        <div class="logo">
+            <a class="navbar-brand" href="#"><h3>QKart</h3></a>
         </div>
         &nbsp;
         <div class="input-group">
@@ -25,7 +28,7 @@
             <button type="button" class="btn btn-outline-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         &nbsp;
-        <div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link"  href="#">Hello, Sign in <b>Account & Lists</b></a>
@@ -42,8 +45,35 @@
 </nav>
 <nav class="navbar navbar-expand-sm nav2Color navbar-dark">
     <div class="container-fluid" style="margin-left: 1em;">
-        <a class="navbar-brand"  href="#"><i class="fas fa-bars"></i> All</a>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <a class="navbar-toggler navbar-brand" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar2">
+            <span class="fa fa-bars"></span>
+        </a>
+        <a class="navbar-brand menu_main_item"  href="#"><i class="fa fa-home"></i> </a>
+        <a class="navbar-toggler navbar-brand" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"><span class="fa fa-user-alt"></span></a>
+        <div class="menu_all">
+            <div class="menu_all_items">
+                <h3 class="menu_all_item">Abcd</h3>
+                <ul>
+                    <li class="menu_all_item">
+                        <a href="#">S</a>
+                    </li>
+                    <li class="menu_all_item">
+                        <a href="#">r</a>
+                    </li>
+                    <li class="menu_all_item">
+                        <a href="#">k</a>
+                    </li>
+                    <li class="menu_all_item">
+                        <a href="#">p</a>
+                    </li>
+                    <li class="menu_all_item">
+                        <a href="#">ch</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar2">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" role="button" href="#">Best Sellers</a>
@@ -65,8 +95,12 @@
     </div>
 </nav>
 <br>
-<div class="container-fluid row pb-3" id="container1">
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+<div id="coupon">
+    <button class="close" onClick="closeCoupon()">&times;</button>
+    <img src=" https://i.ibb.co/5WPbxZ1/discount-coupoun.jpg" class="discount" alt="image"/>
+</div>
+<div class="container-fluid row pb-3" id="top">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Top Picks For Your Home</h5>
@@ -75,7 +109,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/ac2.jpg" alt="Air conditioner">
+                            <img class="card-img-top h-100 w-100 btn" src="img/ac2.jpg" alt="Air conditioner">
                             <p class="text-center">Acs</p>
                         </div>
                     </div>
@@ -83,7 +117,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/fridge2.png" alt="Air conditioner">
+                            <img class="card-img-top h-100 w-100 btn" src="img/fridge2.png" alt="Air conditioner">
                             <p class="text-center">Refrigerators</p>
                         </div>
                     </div>
@@ -94,7 +128,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/oven.jpg" alt="Air conditioner">
+                            <img class="card-img-top h-100 w-100 btn" src="img/oven.jpg" alt="Air conditioner">
                             <p class="text-center">Microwaves</p>
                         </div>
                     </div>
@@ -102,7 +136,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/washingMachine.jpg" alt="Air conditioner">
+                            <img class="card-img-top h-100 w-100 btn" src="img/washingMachine.jpg" alt="Air conditioner">
                             <p class="text-center">Washing Machines</p>
                         </div>
                     </div>
@@ -113,7 +147,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Starting &#8377;199 + Extra up to &#8377;700 cashback </h5>
@@ -122,7 +156,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/womensClothing.jpg" alt="womensClothing">
+                            <img class="card-img-top h-100 w-100 btn" src="img/womensClothing.jpg" alt="womensClothing">
                             <p class="text-center">Women's Clothing</p>
                         </div>
                     </div>
@@ -130,7 +164,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/footwearHandBags.jpg" alt="footwearHandBags">
+                            <img class="card-img-top h-100 w-100 btn" src="img/footwearHandBags.jpg" alt="footwearHandBags">
                             <p class="text-center">footwear+Handbags</p>
                         </div>
                     </div>
@@ -141,7 +175,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/oven.jpg" alt="Air conditioner">
+                            <img class="card-img-top h-100 w-100 btn" src="img/oven.jpg" alt="Air conditioner">
                             <p class="text-center">Microwaves</p>
                         </div>
                     </div>
@@ -149,7 +183,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/watches.jpg" alt="watches">
+                            <img class="card-img-top h-100 w-100 btn" src="img/watches.jpg" alt="watches">
                             <p class="text-center">Watches</p>
                         </div>
                     </div>
@@ -160,7 +194,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Starting &#8377;199 + Extra up to &#8377;700 cashback </h5>
@@ -169,7 +203,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/clothing.jpg" alt="clothing">
+                            <img class="card-img-top h-100 w-100 btn" src="img/clothing.jpg" alt="clothing">
                             <p class="text-center">Clothing</p>
                         </div>
                     </div>
@@ -177,7 +211,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/footwear.jpg" alt="footwear">
+                            <img class="card-img-top h-100 w-100 btn" src="img/footwear.jpg" alt="footwear">
                             <p class="text-center">Footwear</p>
                         </div>
                     </div>
@@ -188,7 +222,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/watches2.jpg" alt="watches">
+                            <img class="card-img-top h-100 w-100 btn" src="img/watches2.jpg" alt="watches">
                             <p class="text-center">Watches</p>
                         </div>
                     </div>
@@ -196,7 +230,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/bags.jpg" alt="bags">
+                            <img class="card-img-top h-100 w-100 btn" src="img/bags.jpg" alt="bags">
                             <p class="text-center">Bags & luggage</p>
                         </div>
                     </div>
@@ -207,7 +241,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Shop by Category </h5>
@@ -216,7 +250,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/fresh.jpg" alt="fresh">
+                            <img class="card-img-top h-100 w-100 btn" src="img/fresh.jpg" alt="fresh">
                             <p class="text-center">Fresh</p>
                         </div>
                     </div>
@@ -224,7 +258,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/mobiles.jpg" alt="mobiles">
+                            <img class="card-img-top h-100 w-100 btn" src="img/mobiles.jpg" alt="mobiles">
                             <p class="text-center">Mobiles</p>
                         </div>
                     </div>
@@ -235,7 +269,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/fashion.jpg" alt="fashion">
+                            <img class="card-img-top h-100 w-100 btn" src="img/fashion.jpg" alt="fashion">
                             <p class="text-center">Fashion</p>
                         </div>
                     </div>
@@ -243,7 +277,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/electronics.jpg" alt="electronics">
+                            <img class="card-img-top h-100 w-100 btn" src="img/electronics.jpg" alt="electronics">
                             <p class="text-center">Electronics</p>
                         </div>
                     </div>
@@ -254,7 +288,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">QPay | Book Your travel tickets</h5>
@@ -263,7 +297,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/flightTickets.jpg" alt="Flight tickets">
+                            <img class="card-img-top h-100 w-100 btn" src="img/flightTickets.jpg" alt="Flight tickets">
                             <p class="text-center">Flight tickets</p>
                         </div>
                     </div>
@@ -271,7 +305,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/Bustickets.jpg" alt="Bus tickets">
+                            <img class="card-img-top h-100 w-100 btn" src="img/Bustickets.jpg" alt="Bus tickets">
                             <p class="text-center">Bus tickets</p>
                         </div>
                     </div>
@@ -282,7 +316,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/traintickets.jpg" alt="Train tickets">
+                            <img class="card-img-top h-100 w-100 btn" src="img/traintickets.jpg" alt="Train tickets">
                             <p class="text-center">Train tickets</p>
                         </div>
                     </div>
@@ -290,7 +324,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/travelProducts.jpg" alt="travelProducts">
+                            <img class="card-img-top h-100 w-100 btn" src="img/travelProducts.jpg" alt="travelProducts">
                             <p class="text-center">Essential travel products</p>
                         </div>
                     </div>
@@ -301,7 +335,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-3 me-lg-3 mb-3 me-md-3">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Top rated, premium quality | Qkart Brands...</h5>
@@ -310,7 +344,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/homeProducts.jpg" alt="Home Products">
+                            <img class="card-img-top h-100 w-100 btn" src="img/homeProducts.jpg" alt="Home Products">
                             <p class="text-center">Home products</p>
                         </div>
                     </div>
@@ -318,7 +352,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/furniture.jpg" alt="furniture">
+                            <img class="card-img-top h-100 w-100 btn" src="img/furniture.jpg" alt="furniture">
                             <p class="text-center">Furniture</p>
                         </div>
                     </div>
@@ -329,7 +363,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/dailyEssentials.jpg" alt="Daily essentials">
+                            <img class="card-img-top h-100 w-100 btn" src="img/dailyEssentials.jpg" alt="Daily essentials">
                             <p class="text-center">Daily essentials</p>
                         </div>
                     </div>
@@ -337,7 +371,7 @@
                 <div class="card-body">
                     <div class="card border-0 h-100">
                         <div class="card-body">
-                            <img class="card-img-top h-100 w-100" src="img/clothingEssentials.jpg" alt="Clothing essentials">
+                            <img class="card-img-top h-100 w-100 btn" src="img/clothingEssentials.jpg" alt="Clothing essentials">
                             <p class="text-center">Clothing essentials</p>
                         </div>
                     </div>
@@ -361,19 +395,19 @@
                     <div class="carousel-item active">
                         <div class="order space">
                             <div class="card-body">
-                                <img src="img/laptop1.jpg" alt="laptop today deal">
+                                <img class="btn" src="img/laptop1.jpg" alt="laptop today deal">
                                 <p>&#8377;31,490.00 - &#8377;47,990.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/niveawhitney.jpg" alt="Nivea whitening today deal">
+                                <img class="btn" src="img/niveawhitney.jpg" alt="Nivea whitening today deal">
                                 <p>&#8377;81.00 - &#8377;1,699.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/mobileTodayDeal.jpg" alt="Mobile today deal">
+                                <img class="btn" src="img/mobileTodayDeal.jpg" alt="Mobile today deal">
                                 <p>&#8377;16,990.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/watchTodayDeal.jpg" alt="Watch today deal">
+                                <img class="btn" src="img/watchTodayDeal.jpg" alt="Watch today deal">
                                 <p>&#8377;509.00 - &#8377;17,450.00</p>
                             </div>
                         </div>
@@ -381,19 +415,19 @@
                     <div class="carousel-item">
                         <div class="order space">
                             <div class="card-body">
-                                <img src="img/cotTodayDeal.jpg" alt="cot today deal">
+                                <img class="btn" src="img/cotTodayDeal.jpg" alt="cot today deal">
                                 <p>&#8377;116.62 - &#8377;3,502.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/mensTeaShirtTodayDeal.jpg" alt="Mens Teashirt today deal">
+                                <img class="btn" src="img/mensTeaShirtTodayDeal.jpg" alt="Mens Teashirt today deal">
                                 <p>&#8377;99.00 - &#8377;2,356.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/girlDressTodayDeal.jpg" alt="Girl dress today deal">
+                                <img class="btn" src="img/girlDressTodayDeal.jpg" alt="Girl dress today deal">
                                 <p>&#8377;158.00 - &#8377;5,114.00</p>
                             </div>
                             <div class="card-body">
-                                <img src="img/speakerTodayDeal.jpg" alt="bluetooth speaker today deal">
+                                <img class="btn" src="img/speakerTodayDeal.jpg" alt="bluetooth speaker today deal">
                                 <p>&#8377;899.00 - &#8377;10,499.00</p>
                             </div>
                         </div>
@@ -424,32 +458,32 @@
                     <div class="carousel-item active">
                         <div class="order space">
                             <div class="card-body">
-                                <img src="img/atomicHabitsBook.jpg" alt="atomicHabitsBook">
+                                <img class="btn" src="img/atomicHabitsBook.jpg" alt="atomicHabitsBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/upscBook.jpg" alt="upscBook">
+                                <img class="btn" src="img/upscBook.jpg" alt="upscBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/ikigaiBook.jpg" alt="ikigaiBook">
+                                <img class="btn" src="img/ikigaiBook.jpg" alt="ikigaiBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/lifesecretsBook.jpg" alt="lifesecretsBook">
+                                <img class="btn" src="img/lifesecretsBook.jpg" alt="lifesecretsBook">
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
                         <div class="order space">
                             <div class="card-body">
-                                <img src="img/sudhasBook.jpg" alt="sudhasBook">
+                                <img class="btn" src="img/sudhasBook.jpg" alt="sudhasBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/psychicomoneyBook.jpg" alt="psychicomoneyBook">
+                                <img class="btn" src="img/psychicomoneyBook.jpg" alt="psychicomoneyBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/winFriendsBook.jpg" alt="winFriendsBook">
+                                <img class="btn" src="img/winFriendsBook.jpg" alt="winFriendsBook">
                             </div>
                             <div class="card-body">
-                                <img src="img/pwrofSubconsciousBok.jpg" alt="pwrofSubconsciousBok">
+                                <img class="btn" src="img/pwrofSubconsciousBok.jpg" alt="pwrofSubconsciousBok">
                             </div>
                         </div>
                     </div>
@@ -470,17 +504,17 @@
 </div>
 
 <div class="container-fluid row pb-3" id="container4">
-    <div class="col-sm-12 col-md-4 col-lg-3 me-lg-3 pb-3">
+    <div class="col-sm-12 col-md-4 col-lg-3 pb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Latest electronics to make your Ugadi special</h5>
-                <img class="w-100" src="img/ugadiElectronics.jpg" alt="Ugadi Special" >
+                <img class="w-100 btn" src="img/ugadiElectronics.jpg" alt="Ugadi Special" >
             </div>
             <a href="#">See more</a>
         </div>
     </div>
 
-    <div class="col-sm-12 col-md-4 col-lg-3 me-lg-3 me-md-3 pb-3">
+    <div class="col-sm-12 col-md-4 col-lg-3  pb-3">
         <div class="card row h-100 w-100">
             <div class="card-body">
                 <h5 class="card-title">Join QPrime to enjoy benefits</h5>
@@ -488,13 +522,13 @@
             <div class="order">
                 <div class="card border-0 h-100 w-100">
                     <div class="card-body">
-                        <img class="h-100 w-100" src="img/gamingWithPrime.jpg" alt="Qgame">
+                        <img class="h-100 w-100 btn" src="img/gamingWithPrime.jpg" alt="Qgame">
                         <p class="text-center">Gaming with QGames</p>
                     </div>
                 </div>
                 <div class="card border-0 h-100 w-100">
                     <div class="card-body">
-                        <img class="h-100 w-100" src="img/primeVideo.jpg" alt="QVideo">
+                        <img class="h-100 w-100 btn" src="img/primeVideo.jpg" alt="QVideo">
                         <p class="text-center">QVideo</p>
                     </div>
                 </div>
@@ -502,13 +536,13 @@
             <div class="order">
                 <div class="card border-0 h-100 w-100">
                     <div class="card-body">
-                        <img class="h-100 w-100" src="img/primeMusic.jpg" alt="QMusic">
+                        <img class="h-100 w-100 btn" src="img/primeMusic.jpg" alt="QMusic">
                         <p class="text-center">QMusic</p>
                     </div>
                 </div>
                 <div class="card border-0 h-100 w-100">
                     <div class="card-body">
-                        <img class="h-100 w-100" src="img/FREEdelivery.jpg" alt="FreeDelivery">
+                        <img class="h-100 w-100 btn" src="img/FREEdelivery.jpg" alt="FreeDelivery">
                         <p class="text-center">Free Delivery</p>
                     </div>
                 </div>
@@ -519,10 +553,12 @@
     </div>
 </div>
 <div class="container-fluid back2top">
-    <p style="margin-top: 10px;">Back to Top</p>
+    <a href="#top" class="btn" style="margin-top: 10px;color:snow;text-decoration: none;">Back to Top</a>
 </div>
-</body>
 
+<script src="js/index.js"></script>
+
+</body>
 <footer class="pt-3">
     <div class="container order1">
         <div>

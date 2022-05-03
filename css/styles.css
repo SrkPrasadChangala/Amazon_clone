@@ -11,11 +11,26 @@ h3 {
 .nav2Color {
     background-color: #232f3e;
 }
-.order {
+.order,.logo {
     display:flex;
 }
 .text-center {
     font-size:12.5px !important;
+}
+
+.menu_all {
+    height:100%;
+    width:25%;
+    background: white;
+    display: none !important;
+}
+.menu_all_items {
+    vertical-align: top;
+    display: inline-block;
+}
+.menu_all_item {
+    text-decoration: none;
+    color: lightgrey;
 }
 /*
 .size {
